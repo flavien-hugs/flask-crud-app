@@ -24,5 +24,11 @@ class Task(db.Model):
 
 
 def init_db():
+    db.drop_all()
     db.create_all()
+    task = Task(name="Apprendre le micro-framework Flask", created_at=datetime.utcnow())
+    task_one = Task(name="Apprendre le framework Django", created_at=datetime.utcnow())
+    db.session.add(task)
+    db.session.add(task_one)
+    db.session.commit()
     lg.warning('Database initialized !')
