@@ -11,7 +11,7 @@ install: venv ## Install or update dependencies
 	pipenv install
 
 freeze: ## Pin current dependencies
-	pipenv run pip freeze > requirements.in
+	pipenv run pip freeze > requirements.txt
 
 db: ## init database
 	FLASK_APP=run.py flask init_db
