@@ -65,9 +65,9 @@ def about():
 
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('pages/page_not_found.html'), 404
+    return render_template('pages/page_not_found.html', error=error), 404
 
 
 @app.errorhandler(500)
 def server_error(error):
-    return render_template('pages/page_not_found.html'), 500
+    return render_template('pages/page_not_found.html', error=error), 500
