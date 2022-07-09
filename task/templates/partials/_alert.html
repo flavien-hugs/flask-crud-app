@@ -1,0 +1,5 @@
+{% for message in get_flashed_messages() %}
+	<div class="alert alert-primary d-flex align-items-center" role="alert">
+	  	<div>{{ message|safe }}</div>
+	</div>
+{% endfor %}
