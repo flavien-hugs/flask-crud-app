@@ -64,7 +64,9 @@ env.bak/
 venv.bak/
 .vscode
 
+tasks.db
 Pipfile.lock
+*.db
 *.sqlite3
 *.lock
 logs/*.log
