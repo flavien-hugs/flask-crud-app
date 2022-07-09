@@ -1,6 +1,6 @@
 # run.py
 
-from task.views import app
+from task import app
 
 
 if __name__ == "__main__":
