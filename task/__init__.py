@@ -1,9 +1,9 @@
 from task.views import app
-from task.models import db, init_db
+from task import models
 
 
-db.init_app(app)
+models.db.init_app(app)
 
 @app.cli.command('init_db')
-def created_db():
-    init_db()
+def init_db():
+    models.init_db()
