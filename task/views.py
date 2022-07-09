@@ -54,8 +54,8 @@ def updateTask(id):
         except Exception as e:
             return "Cette tâche ne peut-être modifier !"
     else:
-        page_tile = "Mettre à jour de la tâche"
-        return render_template('pages/update.html', page_tile=page_tile, task=task)
+        page_title = "Mettre à jour de la tâche"
+        return render_template('pages/update.html', page_title=page_title, task=task)
 
 
 @app.route("/about/")
@@ -65,11 +65,11 @@ def about():
 
 @app.errorhandler(404)
 def page_not_found(error):
-    page_tile = "Page non trouvé"
-    return render_template('pages/page_not_found.html', page_tile=page_tile, error=error), 404
+    page_title = "Page non trouvé"
+    return render_template('pages/page_not_found.html', page_title=page_title, error=error), 404
 
 
 @app.errorhandler(500)
 def server_error(error):
-    page_tile = "Quelques choses à mal tourné"
-    return render_template('pages/page_not_found.html', page_tile=page_tile, error=error), 500
+    page_title = "Quelques choses à mal tourné"
+    return render_template('pages/page_not_found.html', page_title=page_title, error=error), 500
