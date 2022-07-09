@@ -65,9 +65,11 @@ def about():
 
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('pages/page_not_found.html', error=error), 404
+    page_tile = "Page non trouvé"
+    return render_template('pages/page_not_found.html', page_tile=page_tile, error=error), 404
 
 
 @app.errorhandler(500)
 def server_error(error):
-    return render_template('pages/page_not_found.html', error=error), 500
+    page_tile = "Quelques choses à mal tourné"
+    return render_template('pages/page_not_found.html', page_tile=page_tile, error=error), 500
