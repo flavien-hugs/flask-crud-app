@@ -9,7 +9,7 @@ from task.models import db, Task
 
 
 app = Flask(__name__)
-# app.config.from_object('config')
+app.config.from_object('config')
 
 
 @app.route("/", methods=["GET", "POST"])
