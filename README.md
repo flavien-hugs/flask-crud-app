@@ -1,0 +1,1 @@
+# Flask CRUD (CREATE - READ - UPDATE - DELETE) APP
