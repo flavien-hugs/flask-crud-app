@@ -64,8 +64,6 @@ env.bak/
 venv.bak/
 .vscode
 
-tasks.db
-*.db
 *.sqlite3
 logs/*.log
 media/
