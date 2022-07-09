@@ -1,7 +1,53 @@
 {% extends 'base.html' %}
 
 {% block page_content %}
-    <h2 class="text-center">
-        Flask CRUD apps
-    </h2>
+    
+    <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" height="57" src="{{ url_for('static', filename='img/logo.svg')}}" alt="logo">
+        <h2>
+            Tâches à faire
+        </h2>
+        <p class="lead">Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Odit modi eos quae, pariatur, ratione vitae perspiciatis maiores, excepturi accusantium sed sunt aliquid suscipit ullam maxime aperiam nihil itaque vel optio.</p>
+    </div>
+
+    <div class="row g-5"> 
+        {% if tasks %}
+            <div class="col-12">
+                <h4 class="d-flex align-items-center mb-3">
+                    <span class="badge bg-primary rounded-pill me-2">{{ tasks.count() }}</span>
+                    <span class="text-capitalize">tâches</span>
+                </h4>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Tâche</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for task in tasks %}
+                        <tr>
+                            <th><a href="/update/{{ task.id }}/">{{ task.name }}</a></th>
+                            <th>{{ task.created_at.date() }}</th>
+                            <th>
+                                <a href="/delete/{{ task.id }}/" class="btn btn-sm btn-danger text-uppercase fw-bold">
+                                    supprimer
+                                </a>
+                            </th>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+
+        {% include "partials/_alert.html" %}
+        
+        {% block block_form %}
+                
+        {% endblock block_form %}
+    </div>
 {% endblock page_content %}

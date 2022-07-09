@@ -1,0 +1,22 @@
+{% extends "pages/index.html" %}
+
+{% block block_form %}
+	<form action="/update/{{ task.id }}/" method="POST" class="card p-2">
+		<div class="input-group">
+			<input
+				id="name"
+				type="text"
+				name="name"
+				class="form-control shadow-none"
+				placeholder="Ajouter une tâche à faire"
+				value="{{ task.name }}"
+				required
+			>
+			<button
+				type="sumbit"
+				class="btn btn-sm btn-success text-uppercase text-truncate shadow-none fw-bold">
+				Modifier
+			</button>
+		</div>
+	</form>
+{% endblock block_form %}
