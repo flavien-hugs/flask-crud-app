@@ -76,3 +76,4 @@ staticfiles
 debug
 */migrations/*.py
 fixtures/*.json
+.flaskenv
