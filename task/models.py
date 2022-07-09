@@ -2,10 +2,12 @@
 
 import logging as lg
 from datetime import datetime
+
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-from task.views import app
-
+app = Flask(__name__)
+app.config.from_object('config')
 db = SQLAlchemy(app)
 
 
@@ -16,10 +18,6 @@ class Task(db.Model):
         db.DateTime, nullable=True,
         default=datetime.utcnow()
     )
-
-    def __init__(self, name, created_at):
-        self.name = name
-        self.created_at = created_at
 
     def __repr__(self):
         return f"Tâche: {self.name}"
