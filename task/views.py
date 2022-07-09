@@ -9,7 +9,7 @@ from task.models import db, Task
 
 
 app = Flask(__name__)
-app.config.from_object('config')
+# app.config.from_object('config')
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -59,8 +59,9 @@ def updateTask(id):
 
 
 @app.route("/about/")
-def about():
-    return render_template("pages/about.html")
+def support():
+    page_title = "Support"
+    return render_template("pages/about.html", page_title=page_title)
 
 
 @app.errorhandler(404)
