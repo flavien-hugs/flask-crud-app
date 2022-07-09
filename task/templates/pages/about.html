@@ -1,8 +1,12 @@
-{% extends 'base.html' %}
+{% extends "pages/index.html" %}
 
 {% block page_content %}
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat architecto esse ab, doloremque dolore rem beatae saepe explicabo quos voluptates, debitis fugiat harum suscipit non! Libero cum itaque nisi voluptate!
-    </p>
+    <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" height="57" src="{{ url_for('static', filename='img/logo.png')}}" alt="logo">
+        <h2>
+            Tâches à faire
+        </h2>
+        <p class="lead">Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Odit modi eos quae, pariatur, ratione vitae perspiciatis maiores, excepturi accusantium sed sunt aliquid suscipit ullam maxime aperiam nihil itaque vel optio.</p>
+    </div>
 {% endblock page_content %}
 
